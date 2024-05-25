@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Retracted Collaboration Networks</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        body,h1,h2,h3,h4,h5 {font-family: "Georgia", serif}
+        body {
+            background-image: url("https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background: 0.5 ;
+        }
+    
+        div.transbox {
+          margin: 15px;
+          background-color: #ffffff;
+          border: 2px solid black;
+          opacity: 0,7;
+        }
+    
+        div.transbox p {
+          margin: 3%;
+          font-weight: bold;
+          color: #000000;
+        }
+
+        #map {
+            height: 700px;
+            margin: 15px;
+        }
+    </style>
+
+    <!-- w3-content defines a container for fixed size centered content, 
+    and is wrapped around the whole page content, except for the footer in this example -->
+    <div class="w3-content" style="max-width:1400px">
+    
+    <!-- Header -->
+    <div class="background">
+      <div class="transbox">
+        <header class="w3-container w3-center w3-padding-32"> 
+        <h1 style="font-size:400%;"><b>Geolocation Retraction Map</b></h1>
+        </header>
+      </div>
+    <!-- Include Leaflet CSS -->
+
+</head>
+<body>
+<div id="map"></div>
+
+<!-- Include Leaflet JavaScript -->
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Create a Leaflet map
+        const map = L.map('map').setView([51.505, -0.09], 2);
+
+        // Add a tile layer (e.g., OpenStreetMap)
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Define artists with birthplace, record ID, and name
+        const artists = [
+            { name: 'Yin Juan', institution: [32.144240192675134, 114.08613147227867], recordIDs: [50119] },
+            { name: 'Khayatnezhad Majid', institution: [38.24518819272642, 48.297326977972226], recordIDs: [50117, 50119, 50115, 50114, 50113] },
+            { name: 'Shakoor Abdul', institution: [34.80421661080138, 114.30517192460029], recordIDs: [50119] },
+            { name: 'Peng Xiaobang', institution: [33.87271714516147, 109.93681185080007], recordIDs: [50117] },
+            { name: 'Ghezeljehmeidan Leila Joudi', institution: [38.17936056166938, 45.70494195934278], recordIDs: [50117] },
+            { name: 'Jia Yaocheng', institution: [35.294030956671406, 111.11950889886702], recordIDs: [50115] },
+            { name: 'Mehri Shahram', institution: [39.61607904712683, 47.84049469410669], recordIDs: [50115] },
+            { name: 'Chen Weimiao', institution: [23.385364847332234, 113.36125278325507], recordIDs: [50114] },
+            { name: 'Sarhadi Nima', institution: [35.70, 51.32224936531186], recordIDs: [50114] },  
+            { name: 'Bi Dezhong', institution: [36.78166651385604, 117.13679133378031], recordIDs: [50113] },
+            { name: 'Chen Dan', institution: [36.78166651385604, 117.13679133378031], recordIDs: [50113] },
+            { name: 'Hashjin Zohreh Sayyah', institution: [38.08818500161986, 46.28354857393108], recordIDs: [50113] },
+            { name: 'Li Zifa', institution: [36.78166651385604, 117.13679133378031], recordIDs: [50113] },
+            { name: 'Ma Yuexiang', institution: [36.78166651385604, 117.13679133378031], recordIDs: [50113] },
+            { name: 'Zhou Yan', institution: [28.880715961465636, 105.43375984094735], recordIDs: [50112] },
+            { name: 'Zheng Zhongbiao', institution: [28.880715961465636, 105.43375984094735], recordIDs: [50112] },
+            { name: 'Zhang Zhiwei', institution: [29.37091152039268, 105.89207581362201], recordIDs: [50111] },
+            { name: 'Yu Hangcheng', institution: [27.478769178482512, 107.63003039460675], recordIDs: [50111] },
+            { name: 'Feng Shuowen', institution: [29.37091152039268, 105.89207581362201], recordIDs: [50111] },
+            { name: 'Minaeifar Abbas Amir', institution: [35.72820081971298, 51.32224936531186], recordIDs: [50111] },
+        ];
+
+ 
+        // Function to generate a random color
+        function getRandomColor() {
+            const letters = '0123456789ABCDEF';
+            let color = '#';
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
+        // Define a color map for the record IDs
+        const colorMap = {};
+
+        // Assign a random color to each unique record ID
+        artists.forEach(artist => {
+            artist.recordIDs.forEach(recordID => {
+                if (!colorMap[recordID]) {
+                    colorMap[recordID] = getRandomColor();
+                }
+            });
+        });
+
+        // Create an object to store markers and polylines by record ID
+        const recordConnections = {};
+
+        // Iterate over each artist to add markers and connect artists with the same record ID
+        artists.forEach(artist => {
+            const { name, institution, recordIDs } = artist;
+
+            // Create marker for the artist
+            const marker = L.marker(institution).addTo(map).bindPopup(name);
+
+            // Add the marker to each record ID array
+            recordIDs.forEach(recordID => {
+                if (!recordConnections[recordID]) {
+                    recordConnections[recordID] = [];
+                }
+                recordConnections[recordID].push(marker);
+            });
+        });
+
+        // Iterate over each record ID to connect artists
+        Object.entries(recordConnections).forEach(([recordID, connection]) => {
+            const color = colorMap[recordID];
+            // If there are multiple artists in the record ID
+            if (connection.length > 1) {
+                // Create polylines between all artists in the same record ID
+                for (let i = 0; i < connection.length - 1; i++) {
+                    for (let j = i + 1; j < connection.length; j++) {
+                        const polyline = L.polyline([
+                            connection[i].getLatLng(),
+                            connection[j].getLatLng()
+                        ], { color }).addTo(map);
+                    }
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>

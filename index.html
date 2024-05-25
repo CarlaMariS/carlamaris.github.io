@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>My time abroad</title>
+<title>Retracted Collaboration Networks</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -9,23 +9,41 @@
 <style>
     body,h1,h2,h3,h4,h5 {font-family: "Georgia", serif}
     body {
-        background-image: url("Pictures/Background.jpg");
+        background-image: url("https://images.unsplash.com/photo-1545987796-200677ee1011?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D");
         background-repeat: no-repeat;
         background-size: cover;
+        background: 0.5 ;
     }
+
+    div.transbox {
+      margin: 15px;
+      background-color: #ffffff;
+      border: 2px solid black;
+      opacity: 0,7;
+    }
+
+    div.transbox p {
+      margin: 3%;
+      font-weight: bold;
+      color: #000000;
+    }
+    
 </style>
 </head>
-
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
 <!-- Header -->
-<header class="w3-container w3-center w3-padding-32"> 
-  <h1 style="font-size:500%;"><b>MY BLOG</b></h1>
-  <p style="font-size:300%;">Welcome to Carla's travel blog</p>
-</header>
+
+<div class="background">
+  <div class="transbox">
+    <header class="w3-container w3-center w3-padding-32"> 
+    <h1 style="font-size:400%;"><b>Academia Collaborations </b></h1>
+    <p style="font-size:200%;">Retraction Database Project</p>
+    </header>
+  </div>
 
 <!-- Grid -->
 <div class="w3-row">
@@ -34,19 +52,23 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l8 s12">
   <!-- Blog entry -->
   <div class="w3-card-4 w3-margin w3-white">
-    <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Pond.jpg?raw=true" alt="A Pond at the Palace" style="width:100%">
+    <img src="Pictures/map.jpg" alt="Map with markers" style="width:100%">
     <div class="w3-container">
-      <h3><b>HOW TO SURVIVE IN SEOUL</b></h3>
-      <h5>Find out the best way to navigate life on the other side of the world <span class="w3-opacity">April 7, 2024</span></h5>
+      <h3><b>MAPPING RETRACTED NETWORKS</b></h3>
+      <h5>Take a look at some of the networks that span across the globe. Here you can find different authors and zoom into their connections.<span class="w3-opacity">May 25th, 2024</span></h5>
     </div>
 
     <div class="w3-container">
-      <p>Suddenly stepping foot into a different culture can be scary and exciting at the same time. Read this, if you want to have a short
-        guide of what you can do in Seoul, where you can find living essentials and how to navigate to your favourite places.
+      <p>There are many reasons why a paper could be retracted. This project, however, is particularly looking at those authors, who were retracted and received a publishingban from Journals.
+        This map gives an overview of connections between China and Iran in a papermill scandal. 
       </p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
-          <p><button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button></p>
+          <p>
+            <a href= "linkedsite/geomap.html">
+              <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
+            </a>
+          </p>
         </div>
         <div class="w3-col m4 w3-hide-small">
           <p><span class="w3-padding-large w3-right"><b>Comments  </b> <span class="w3-tag">0</span></span></p>
@@ -60,19 +82,18 @@ and is wrapped around the whole page content, except for the footer in this exam
   <div class="w3-card-4 w3-margin w3-white">
   <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Namsangeol.jpg?raw=true" alt="Namsangeol Village" style="width:100%">
     <div class="w3-container">
-      <h3><b>MY FAVOURITE SPOTS IN SEOUL</b></h3>
-      <h5>Take a look at some known tourist spots as well as hidden gems in and around the city <span class="w3-opacity">April 5, 2024</span></h5>
+      <h3><b>Playing with Networks</b></h3>
+      <h5>Here you can play around with a force directed network of all the authors who were retracted due to a publishing ban<span class="w3-opacity">May 25th, 2024</span></h5>
     </div>
 
     <div class="w3-container">
-      <p>If you're curious about living abroad in Seoul, click here to find some of the most beautiful, chill or mesmerizing spots I came upon
-        during my time abroad. I will also give hints on which place I would visit at what time and tell some of my experiences.
+      <p>If you want to see further information on how dense the collaboration networks are:
       </p>
       <div class="w3-row">
         <div class="w3-col m8 s12">
           <p>
-            <a href = "https://github.com/CarlaMariS/carlamaris.github.io/blob/951803fe9d7c9c2f0aebec2dd2ccc2a7d0525465/linkedsite/bestspots">
-                <button class="w3-button w3-padding-large w3-white w3-border"><b>READ MORE »</b></button>
+            <a href = "linkedsite/geomap.html">
+                <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
             </a>
         </p>
         </div>
@@ -89,28 +110,29 @@ and is wrapped around the whole page content, except for the footer in this exam
 <div class="w3-col l4">
   <!-- About Card -->
   <div class="w3-card w3-margin w3-margin-top"> 
-  <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Me.jpg?raw=true" alt="Picture of me" style="width:100%">
+  <img src="https://i0.wp.com/retractionwatch.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10.13.27-AM.png?resize=768%2C458&ssl=1" alt="Logo Retraction Database" style="width:100%">
     <div class="w3-container w3-white">
-      <h4><b>Carla</b></h4>
-      <p>Just me, hi. I use this blog to remember my best travel moments.</p>
+      <h4><b>The Retraction Database</b></h4>
+      <p>Find out more about the Retraction Database by Crossref <a href="https://www.crossref.org/blog/news-crossref-and-retraction-watch/">here</a> or make your own searches following 
+        <a href="http://retractiondatabase.org/RetractionSearch.aspx?">this link.</a></p>
     </div>
   </div><hr>
   
   <!-- Posts -->
   <div class="w3-card w3-margin">
     <div class="w3-container w3-padding">
-      <h4>Popular Posts</h4>
+      <h4>More posts about this topic</h4>
     </div>
     <ul class="w3-ul w3-hoverable w3-white">
       <li class="w3-padding-16">
         <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Fleamarket.jpg?raw=true" alt="Image" class="w3-left w3-margin-right" style="height:40px">
-        <span class="w3-large">Fleamarket</span><br>
-        <span>Shopping for cheap with locals</span>
+        <span class="w3-large">Papermills</span><br>
+        <span>What is a papermill?</span>
       </li>
       <li class="w3-padding-16">
         <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Ikseon.jpg?raw=true" alt="Image" class="w3-left w3-margin-right" style="width:40px">
-        <span class="w3-large">Ikseon</span><br>
-        <span>Enjoying a coffee with the eye</span>
+        <span class="w3-large">Impact</span><br>
+        <span>Why is it important to find discuss ban reasons like "fake peer reviews"?</span>
       </li> 
       <li class="w3-padding-16">
         <img src="https://github.com/CarlaMariS/carlamaris.github.io/blob/main/Pictures/Palace2.jpg?raw=true" alt="Image" class="w3-left w3-margin-right" style="width:40px">
@@ -150,8 +172,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Previous</button>
-  <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Next »</button>
+  <button class="w3-button w3-black w3-disabled w3-padding-large w3-margin-bottom">Find more of my projects</button>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
 
