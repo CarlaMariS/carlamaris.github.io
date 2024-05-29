@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.16.0/d3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sigma.js/1.2.1/sigma.min.js"></script>
+</head>
+<body>
+    <div id="container" style="width: 800px; height: 600px;"></div>
+    <script>
+        const s = new sigma({
+            container: 'container',
+            settings: {
+                defaultNodeColor: '#ec5148',
+                defaultEdgeColor: '#c0c0c0',
+                edgeColor: 'default'
+            }
+        });
+
+        Promise.all([
+            d3.csv('authors.csv'),
+            d3.csv('edges.csv')
+        ]).then(function(files) {
+            const authors = files[0];
+            const edges = files[1];
+
+            // Create nodes
+            authors.forEach(author => {
+                s.graph.addNode({
+                    id: author.id,
+                    label: author.name,
+                    x: Math.random(),
+                    y: Math.random(),
+                    size: 1
+                });
+            });
+
+            // Create edges
+            edges.forEach(edge => {
+                s.graph.addEdge({
+                    id: `e${edge.from}-${edge.to}`,
+                    source: edge.from,
+                    target: edge.to,
+                    size: edge.weight
+                });
+            });
+
+            s.refresh();
+
+            s.bind('clickNode', function(e) {
+                alert(`Node clicked: ${e.data.node.label}`);
+            });
+        }).catch(function(error) {
+            console.error('Error loading or parsing CSV files:', error);
+        });
+    </script>
+</body>
+</html>
+
