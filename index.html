@@ -27,7 +27,19 @@
       font-weight: bold;
       color: #000000;
     }
-    
+
+    div.block{
+      width: 100px;
+      height: 100px;
+      background: red;
+      transition: width 2s, height 2s, transform 2s;
+    }
+
+    div.block:hover {
+      width: 300px;
+      height: 300px;
+      transform: rotate(180deg);
+    }
 </style>
 </head>
 
@@ -35,6 +47,7 @@
 and is wrapped around the whole page content, except for the footer in this example -->
 <div class="w3-content" style="max-width:1400px">
 
+<div class="block"></div>
 <!-- Header -->
 
 <div class="background">
@@ -168,7 +181,7 @@ and is wrapped around the whole page content, except for the footer in this exam
 <!-- Footer -->
 <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
   <a href="https://github.com/CarlaMariS">
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Find more of my projects</button>
+    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Find more of our projects</button>
   </a>
   <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
 </footer>
