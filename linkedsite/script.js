@@ -977,16 +977,16 @@ var journalColors = {
       highlight: {
         background: '#FFFF00',
         border: '#DDDD00' 
-      }
-    };
+      },
+    },
     // Add the journal value as the tooltip
     node.title = node.journal;
     nodes.update(node);
   });
 
   // Create a network
-  var container = document.getElementById('mynetwork');
-  var data = {
+var container = document.getElementById('mynetwork');
+var data = {
     nodes: nodes,
     edges: edges
   };
@@ -1003,13 +1003,76 @@ var options = {
             hover: {
                 border: "#DDDD00",
                 background: "#FFFF00"
-            }
+            },
+          },
+        font: {
+            face: "georgia",
+            size: 14,
+            bold: true,
         },
     },
     mass: 0.4,
     interaction: {
         hover: true,
-        }
+        },
+    layout: {
+      radnomSeed: 8
+    },
+    physics: {
+      enabled: true,
+      barnesHut: {
+        gravitationalConstant: -1000,
+        centralGravity: 0.3,
+        springLength: 320,
+        springConstant: 0.04,
+        damping: 0.09,
+        avoidOverlap: 0.5
+      },
+      stabilization: {
+        iterations: 20
+      }
+    }
 };
 
+
 var network = new vis.Network(container, data, options);
+network.on("selectNode", function (params) {
+  if (params.nodes.length == 1) {
+    if (network.isCluster(params.nodes[0]) == true) {
+      network.openCluster(params.nodes[0]);
+    }
+  }
+});
+
+// New function to cluster by journal
+function clusterByJournal() {
+  network.setData(data);
+  
+  // Get unique journal values
+  var journals = {};
+  data.nodes.forEach(function (node) {
+    if (node.journal) {
+      journals[node.journal] = true;
+    }
+  });
+
+  // Cluster by each journal
+  Object.keys(journals).forEach(function (journal) {
+    var clusterOptionsByData = {
+      joinCondition: function (childOptions) {
+        return childOptions.journal == journal;
+      },
+      processProperties: function (clusterOptions, childNodes, childEdges) {
+        clusterOptions.label = journal + " (" + childNodes.length + ")";
+        return clusterOptions;
+      },
+      clusterNodeProperties: {
+        id: "cluster:" + journal,
+        borderWidth: 3,
+        shape: "hexagon",
+        label: journal,
+          },
+        };
+        network.cluster(clusterOptionsByData);
+      });
+}
