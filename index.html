@@ -6,6 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet" type="text/css" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <style>
     body,h1,h2,h3,h4,h5 {font-family: "Georgia", serif}
     body {
@@ -42,146 +44,159 @@
 </style>
 </head>
 
+<body>
+    <div class="loader-wrapper">
+        <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
-<div class="w3-content" style="max-width:1400px">
-<!-- Header -->
+    <div class="w3-content" style="max-width:1400px">
+    <!-- Header -->
 
-<div class="background">
-  <div class="transbox">
-    <header class="w3-container w3-center w3-padding-32"> 
-    <h1 style="font-size:400%;"><b>Academia Collaborations </b></h1>
-    <p style="font-size:200%;">Retraction Database Project</p>
-    </header>
-  </div>
-
-<!-- Grid -->
-<div class="w3-row">
-
-<!-- Blog entries -->
-<div class="w3-col l8 s12">
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-    <img src="Pictures/map.jpg" alt="Map with markers" style="width:100%">
-    <div class="w3-container">
-      <h3><b>MAPPING RETRACTED NETWORKS</b></h3>
-      <h5>Take a look at some of the networks that span across the globe. Here you can find different authors and zoom into their connections.<span class="w3-opacity">May 25th, 2024</span></h5>
+    <div class="background">
+    <div class="transbox">
+        <header class="w3-container w3-center w3-padding-32"> 
+        <h1 style="font-size:400%;"><b>Academia Collaborations </b></h1>
+        <p style="font-size:200%;">Retraction Database Project</p>
+        </header>
     </div>
 
-    <div class="w3-container">
-      <p>There are many reasons why a paper could be retracted. This project, however, is particularly looking at those authors, who were retracted and received a publishingban from Journals.
-        This map gives an overview of connections between China and Iran in a papermill scandal and many more.
-      </p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p>
-            <a href= "https://faufreiter.github.io/retractions_map/">
-              <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
-            </a>
-            <p>
-              or look at the map about the Iranian/Chinese papermill            
-              <a href="linkedsite/geomap.html">
-              <button class="w3-button w3-padding-large w3-white w3-border"><b>HERE</b></button> 
-              </a>
-            </p>
-          </p>
+    <!-- Grid -->
+    <div class="w3-row">
+
+    <!-- Blog entries -->
+    <div class="w3-col l8 s12">
+    <!-- Blog entry -->
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="Pictures/map.jpg" alt="Map with markers" style="width:100%">
+        <div class="w3-container">
+        <h3><b>MAPPING RETRACTED NETWORKS</b></h3>
+        <h5>Take a look at some of the networks that span across the globe. Here you can find different authors and zoom into their connections.<span class="w3-opacity">May 25th, 2024</span></h5>
         </div>
-      </div>
-    </div>
-  </div>
-  <hr>
 
-  <!-- Blog entry -->
-  <div class="w3-card-4 w3-margin w3-white">
-  <img src="/Pictures/network.png" alt="Network Graph" style="width:100%">
-    <div class="w3-container">
-      <h3><b>NETWORK ANALYSIS</b></h3>
-      <h5>Here you can play around with a force directed network of all the authors who were retracted due to a publishing ban<span class="w3-opacity">May 25th, 2024</span></h5>
-    </div>
-
-    <div class="w3-container">
-      <p>If you want to see further information on how dense the collaboration networks are:
-      </p>
-      <div class="w3-row">
-        <div class="w3-col m8 s12">
-          <p>
-            <a href = "linkedsite/network.html">
+        <div class="w3-container">
+        <p>There are many reasons why a paper could be retracted. This project, however, is particularly looking at those authors, who were retracted and received a publishingban from Journals.
+            This map gives an overview of connections between China and Iran in a papermill scandal and many more.
+        </p>
+        <div class="w3-row">
+            <div class="w3-col m8 s12">
+            <p>
+                <a href= "https://faufreiter.github.io/retractions_map/">
                 <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
-            </a>
+                </a>
+                <p>
+                or look at the map about the Iranian/Chinese papermill            
+                <a href="linkedsite/geomap.html">
+                <button class="w3-button w3-padding-large w3-white w3-border"><b>HERE</b></button> 
+                </a>
+                </p>
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <hr>
+
+    <!-- Blog entry -->
+    <div class="w3-card-4 w3-margin w3-white">
+    <img src="/Pictures/network.png" alt="Network Graph" style="width:100%">
+        <div class="w3-container">
+        <h3><b>NETWORK ANALYSIS</b></h3>
+        <h5>Here you can play around with a force directed network of all the authors who were retracted due to a publishing ban<span class="w3-opacity">May 25th, 2024</span></h5>
+        </div>
+
+        <div class="w3-container">
+        <p>If you want to see further information on how dense the collaboration networks are:
+        </p>
+        <div class="w3-row">
+            <div class="w3-col m8 s12">
+            <p>
+                <a href = "linkedsite/network.html">
+                    <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
+                </a>
+            </p>
+            </div>
+        </div>
+        </div>
+    </div>
+    <!-- END BLOG ENTRIES -->
+    </div>
+
+    <!-- Introduction menu -->
+    <div class="w3-col l4">
+    <!-- About Card -->
+    <div class="w3-card w3-margin w3-margin-top"> 
+    <img src="https://i0.wp.com/retractionwatch.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10.13.27-AM.png?resize=768%2C458&ssl=1" alt="Logo Retraction Database" style="width:100%">
+        <div class="w3-container w3-white">
+        <h4><b>The Retraction Database</b></h4>
+        <p>Find out more about the Retraction Database by Crossref <a href="https://www.crossref.org/blog/news-crossref-and-retraction-watch/">here</a> or make your own searches following 
+            <a href="http://retractiondatabase.org/RetractionSearch.aspx?">this link.</a></p>
+        </div>
+    </div><hr>
+    
+    <!-- Posts -->
+    <div class="w3-card w3-margin">
+        <div class="w3-container w3-white">
+        <h4>More posts about this topic</h4>
+        </div>
+        <ul class="w3-ul w3-hoverable w3-white">
+        <li class="w3-padding-16">
+            <img src="/Pictures/papermill.jpg" alt="" class="w3-left w3-margin-right" style="height:40px">
+            <span class="w3-large">Papermills</span><br>
+            <span>What is a papermill?</span>
+        </li>
+        <li class="w3-padding-16">
+            <img src="/Pictures/impact_new.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
+            <span class="w3-large">Impact</span><br>
+            <span>Why is it important to find discuss ban reasons like "fake peer reviews"?</span>
+        </li> 
+        <li class="w3-padding-16 w3-hide-medium w3-hide-small">
+            <img src="/Pictures/visualizations.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
+            <span class="w3-large">Visualizations as science</span><br>
+            <span>Why being able to see connections makes the difference for scientific understanding.</span>
+        </li>  
+        </ul>
+    </div>
+    <hr> 
+    
+    <!-- Labels / tags -->
+    <div class="w3-card w3-margin">
+        <div class="w3-container w3-white">
+        <h4>Tags</h4>
+        </div>
+        <div class="w3-container w3-white">
+        <p><span class="w3-tag w3-black w3-margin-bottom">Collaboration</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Network</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Visualization</span>
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Retraction</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Mapping</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">QGIS</span>
+        <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Publishingban</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">RetractionWatchDatabase</span>
         </p>
         </div>
-      </div>
     </div>
-  </div>
-<!-- END BLOG ENTRIES -->
-</div>
+    
+    <!-- END Introduction Menu -->
+    </div>
 
-<!-- Introduction menu -->
-<div class="w3-col l4">
-  <!-- About Card -->
-  <div class="w3-card w3-margin w3-margin-top"> 
-  <img src="https://i0.wp.com/retractionwatch.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10.13.27-AM.png?resize=768%2C458&ssl=1" alt="Logo Retraction Database" style="width:100%">
-    <div class="w3-container w3-white">
-      <h4><b>The Retraction Database</b></h4>
-      <p>Find out more about the Retraction Database by Crossref <a href="https://www.crossref.org/blog/news-crossref-and-retraction-watch/">here</a> or make your own searches following 
-        <a href="http://retractiondatabase.org/RetractionSearch.aspx?">this link.</a></p>
-    </div>
-  </div><hr>
-  
-  <!-- Posts -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-white">
-      <h4>More posts about this topic</h4>
-    </div>
-    <ul class="w3-ul w3-hoverable w3-white">
-      <li class="w3-padding-16">
-        <img src="/Pictures/papermill.jpg" alt="" class="w3-left w3-margin-right" style="height:40px">
-        <span class="w3-large">Papermills</span><br>
-        <span>What is a papermill?</span>
-      </li>
-      <li class="w3-padding-16">
-        <img src="/Pictures/impact_new.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
-        <span class="w3-large">Impact</span><br>
-        <span>Why is it important to find discuss ban reasons like "fake peer reviews"?</span>
-      </li> 
-      <li class="w3-padding-16 w3-hide-medium w3-hide-small">
-        <img src="/Pictures/visualizations.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
-        <span class="w3-large">Visualizations as science</span><br>
-        <span>Why being able to see connections makes the difference for scientific understanding.</span>
-      </li>  
-    </ul>
-  </div>
-  <hr> 
- 
-  <!-- Labels / tags -->
-  <div class="w3-card w3-margin">
-    <div class="w3-container w3-white">
-      <h4>Tags</h4>
-    </div>
-    <div class="w3-container w3-white">
-    <p><span class="w3-tag w3-black w3-margin-bottom">Collaboration</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Network</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Visualization</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Retraction</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Mapping</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">QGIS</span>
-      <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">Publishingban</span> <span class="w3-tag w3-light-grey w3-small w3-margin-bottom">RetractionWatchDatabase</span>
-    </p>
-    </div>
-  </div>
-  
-<!-- END Introduction Menu -->
-</div>
+    <!-- END GRID -->
+    </div><br>
 
-<!-- END GRID -->
-</div><br>
+    <!-- END w3-content -->
+    </div>
 
-<!-- END w3-content -->
-</div>
+    <!-- Footer -->
+    <footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
+    <a href="https://github.com/CarlaMariS">
+        <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Find more of our projects</button>
+    </a>
+    <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
+    </footer>
 
-<!-- Footer -->
-<footer class="w3-container w3-dark-grey w3-padding-32 w3-margin-top">
-  <a href="https://github.com/CarlaMariS">
-    <button class="w3-button w3-black w3-padding-large w3-margin-bottom">Find more of our projects</button>
-  </a>
-  <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
-</footer>
+    <script>
+        $(window).on("load", function() {
+            setTimeout(function() {
+                $(".loader-wrapper").fadeOut("slow");
+            }, 2000);
+        });
+    </script>
 
 </body>
 </html>
