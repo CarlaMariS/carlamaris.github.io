@@ -45,9 +45,6 @@
 </head>
 
 <body>
-    <div class="loader-wrapper">
-        <span class="loader"><span class="loader-inner"></span></span>
-    </div>
 
 <!-- w3-content defines a container for fixed size centered content, 
 and is wrapped around the whole page content, except for the footer in this example -->
@@ -57,8 +54,8 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="background">
     <div class="transbox">
         <header class="w3-container w3-center w3-padding-32"> 
-        <h1 style="font-size:400%;"><b>Academia Collaborations </b></h1>
-        <p style="font-size:200%;">Retraction Database Project</p>
+        <h1 style="font-size:400%;"><b>Retracted Academia Collaborations </b></h1>
+        <p style="font-size:200%;">Identifying networks in retracted authorship</p>
         </header>
     </div>
 
@@ -67,47 +64,25 @@ and is wrapped around the whole page content, except for the footer in this exam
 
     <!-- Blog entries -->
     <div class="w3-col l8 s12">
-    <!-- Blog entry -->
-    <div class="w3-card-4 w3-margin w3-white">
-        <img src="Pictures/map.jpg" alt="Map with markers" style="width:100%">
-        <div class="w3-container">
-        <h3><b>MAPPING RETRACTED NETWORKS</b></h3>
-        <h5>Take a look at some of the networks that span across the globe. Here you can find different authors and zoom into their connections.<span class="w3-opacity">May 25th, 2024</span></h5>
-        </div>
 
-        <div class="w3-container">
-        <p>There are many reasons why a paper could be retracted. This project, however, is particularly looking at those authors, who were retracted and received a publishingban from Journals.
-            This map gives an overview of connections between China and Iran in a papermill scandal and many more.
-        </p>
-        <div class="w3-row">
-            <div class="w3-col m8 s12">
-            <p>
-                <a href= "https://faufreiter.github.io/retractions_map/">
-                <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
-                </a>
-                <p>
-                or look at the map about the Iranian/Chinese papermill            
-                <a href="linkedsite/geomap.html">
-                <button class="w3-button w3-padding-large w3-white w3-border"><b>HERE</b></button> 
-                </a>
-                </p>
-            </p>
-            </div>
-        </div>
-        </div>
-    </div>
-    <hr>
 
     <!-- Blog entry -->
     <div class="w3-card-4 w3-margin w3-white">
-    <img src="/Pictures/network.png" alt="Network Graph" style="width:100%">
+    <img src="/Pictures/networks.png" alt="Network Graph" style="width:100%">
         <div class="w3-container">
         <h3><b>NETWORK ANALYSIS</b></h3>
         <h5>Here you can play around with a force directed network of all the authors who were retracted due to a publishing ban<span class="w3-opacity">May 25th, 2024</span></h5>
         </div>
 
         <div class="w3-container">
-        <p>If you want to see further information on how dense the collaboration networks are:
+        <p>There are many reasons why a paper could be retracted. This project, however, is particularly looking at those authors, who were retracted and 
+            received a publishingban. A publishingban means, that either a journal or a commitee decided that these authors should not be able to publish 
+            their research due to serious issues with it. This graph shows, which networks can be identified in this group of banned researches and how 
+            interconnected they are. Nodes represent authors, edges show who has collaborated on an article. You can identify smaller, exclusive networks 
+            as well as filter by journal. The force directed graph will refresh the distances if you move a node or filter by journal. If you want to
+            find the most important persons in this graph, try to find "Mori" or "Majid" and compare their individual networks. You can also see how 
+            different the topics of retracted articles can be by going through the journal names, however, there is a focus on natural sciences and medical
+            articles, especially in this category of publishingban. 
         </p>
         <div class="w3-row">
             <div class="w3-col m8 s12">
@@ -120,6 +95,43 @@ and is wrapped around the whole page content, except for the footer in this exam
         </div>
         </div>
     </div>
+    <!-- Blog entry -->
+
+    <div class="w3-card-4 w3-margin w3-white">
+        <img src="Pictures/map.jpg" alt="Map with markers" style="width:100%">
+        <div class="w3-container">
+        <h3><b>MAPPING RETRACTED NETWORKS</b></h3>
+        <h5>Take a look at some of the networks that span across the globe. Here you can find different authors and zoom into their connections.<span class="w3-opacity">May 25th, 2024</span></h5>
+        </div>
+
+        <div class="w3-container">
+        <p>This map gives an overview of connections between retracted authors worldwide. You can filter by journals or country and see how the collaborative
+            networks are interconnected on an international level. This map is hosted by one of the contributers of the project.
+        </p>
+        <div class="w3-row">
+            <div class="w3-col m8 s12">
+            <p>
+                <a href= "https://faufreiter.github.io/retractions_map/">
+                <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button>
+                </a>
+            </div>
+        </div>
+        <div class="w3-row">
+        <p>Additionally, there is another map related to a specific scandal available for data exploring. Particularly interesting to this project was a Chinese-Iranian papermill
+        which was found out some years ago. Interestingly, in this case researchers were either giving each other fake-citations or collecting
+        false or manipulated peer reviews. In this leaflet map, nodes represent authors and the articles are each assigned to a unique colour to be
+        able to differentiate between the connections. To be able to visualize the point of interconnectedness better, only a smaller portion of all     
+        the researches involved into the Chinese-Iranian papermill were visualized. To take a further look at this leaflet map, please  
+        </p>     
+                <a href="linkedsite/geomap.html">
+                <button class="w3-button w3-padding-large w3-white w3-border"><b>CLICK HERE</b></button> 
+                </a>
+                </p>
+            </p>
+        </div>    
+        </div>
+    </div>
+    <hr>
     <!-- END BLOG ENTRIES -->
     </div>
 
@@ -129,7 +141,7 @@ and is wrapped around the whole page content, except for the footer in this exam
     <div class="w3-card w3-margin w3-margin-top"> 
     <img src="https://i0.wp.com/retractionwatch.com/wp-content/uploads/2023/09/Screenshot-2023-09-11-at-10.13.27-AM.png?resize=768%2C458&ssl=1" alt="Logo Retraction Database" style="width:100%">
         <div class="w3-container w3-white">
-        <h4><b>The Retraction Database</b></h4>
+        <h4><b>Data Origin: the Retraction Watch Database</b></h4>
         <p>Find out more about the Retraction Database by Crossref <a href="https://www.crossref.org/blog/news-crossref-and-retraction-watch/">here</a> or make your own searches following 
             <a href="http://retractiondatabase.org/RetractionSearch.aspx?">this link.</a></p>
         </div>
@@ -138,22 +150,30 @@ and is wrapped around the whole page content, except for the footer in this exam
     <!-- Posts -->
     <div class="w3-card w3-margin">
         <div class="w3-container w3-white">
-        <h4>More posts about this topic</h4>
+        <h4>Further articles about this topic</h4>
         </div>
         <ul class="w3-ul w3-hoverable w3-white">
         <li class="w3-padding-16">
             <img src="/Pictures/papermill.jpg" alt="" class="w3-left w3-margin-right" style="height:40px">
-            <span class="w3-large">Papermills</span><br>
+            <span class="w3-large">
+                <a href="https://publicationethics.org/systematic-manipulation-paper-mills">
+                    <button>Papermills</button>
+                </a></span><br>
             <span>What is a papermill?</span>
         </li>
         <li class="w3-padding-16">
             <img src="/Pictures/impact_new.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
-            <span class="w3-large">Impact</span><br>
+            <span class="w3-large">
+                <a href="https://www.nature.com/articles/d41586-023-03974-8">
+                    <button>Impact</button></a></span><br>
             <span>Why is it important to find discuss ban reasons like "fake peer reviews"?</span>
         </li> 
         <li class="w3-padding-16 w3-hide-medium w3-hide-small">
             <img src="/Pictures/visualizations.jpg" alt="" class="w3-left w3-margin-right" style="width:40px">
-            <span class="w3-large">Visualizations as science</span><br>
+            <span class="w3-large">
+                <a href="https://hdsr.mitpress.mit.edu/pub/zok97i7p/release/4">
+                    <button>Visualizations as science</button>
+                </a></span><br>
             <span>Why being able to see connections makes the difference for scientific understanding.</span>
         </li>  
         </ul>
@@ -189,14 +209,6 @@ and is wrapped around the whole page content, except for the footer in this exam
     </a>
     <p>Powered by <a href="https://www.w3schools.com/w3css/default.asp" target="_blank">w3.css</a></p>
     </footer>
-
-    <script>
-        $(window).on("load", function() {
-            setTimeout(function() {
-                $(".loader-wrapper").fadeOut("slow");
-            }, 2000);
-        });
-    </script>
 
 </body>
 </html>
